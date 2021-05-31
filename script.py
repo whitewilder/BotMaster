@@ -1,4 +1,5 @@
 import requests
+import yfinance as yf
 import time
 import schedule
 from datetime import datetime
@@ -39,7 +40,7 @@ def time1():
 
 
 schedule.clear()
-schedule.every(60).seconds.do(time1) 
+schedule.every(6).seconds.do(time1) 
 
     
 
