@@ -19,7 +19,7 @@ def time1():
     df=yf.download(tickers=all_ticker, period='1d', interval='5m')
     df=df.dropna()
 #    rat=(df['Close']-df['Open'])/ (df['High']-df['Low']) > .7
-    rat = df['Close'].pct_change()*100 > .45
+    rat = df['Close'].pct_change()*100 > .35
     rat_last=rat[-1:]
     pct_change= df['Close'].pct_change()
     pct_change=pd.DataFrame(pct_change*100)
