@@ -42,11 +42,11 @@ def time1():
 
 schedule.clear()
 
-schedule.every().day.at("18:35").do(time1)
-schedule.every().day.at("18:36").do(time1)
-schedule.every().day.at("18:37").do(time1)
-schedule.every().day.at("18:38").do(time1)
-schedule.every().day.at("18:40").do(time1)
+schedule.every().day.at("18:55").do(time1)
+schedule.every().day.at("18:46").do(time1)
+schedule.every().day.at("18:47").do(time1)
+schedule.every().day.at("18:48").do(time1)
+schedule.every().day.at("18:50").do(time1)
 
 
     
