@@ -100,13 +100,14 @@ def time3():
 
 schedule.clear()
 
-schedule.every().day.at("18:00").do(time1)
+schedule.every().day.at("09:03").do(time1)
 schedule.every().day.at("10:02").do(time2)
 schedule.every().day.at("03:48").do(time3)
-schedule.every().day.at("05:00").do(time1)
-schedule.every().day.at("18:08").do(time1)
-schedule.every().day.at("18:09").do(time2)
-schedule.every().day.at("18:09").do(time3)
+schedule.every().day.at("05:03").do(time1)
+schedule.every().day.at("06:03").do(time1)
+schedule.every().day.at("07:03").do(time1)
+schedule.every().day.at("08:03").do(time1)
+schedule.every().day.at("09:33").do(time1)
 
 
     
