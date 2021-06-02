@@ -44,9 +44,8 @@ schedule.clear()
 
 schedule.every().day.at("18:55").do(time1)
 schedule.every().day.at("18:46").do(time1)
-schedule.every().day.at("18:47").do(time1)
-schedule.every().day.at("18:48").do(time1)
-schedule.every().day.at("18:50").do(time1)
+schedule.every().day.at("13:49").do(time1)
+schedule.every().day.at("13:48").do(time1)
 
 
     
