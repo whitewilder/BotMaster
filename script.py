@@ -51,10 +51,6 @@ def time2():
 
     df=yf.download(tickers=all_ticker, period='1d', interval='1d')
     df1= (df['Close']-df['Open'])*100/df['Open']
-    df1[df1>2].dropna(axis=1)
-    df1[df1<-2].dropna(axis=1)
-    
-
 
 
     text1 = df1[df1>2][df1<4].dropna(axis=1).transpose()
