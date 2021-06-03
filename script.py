@@ -50,6 +50,9 @@ def time2():
    
 
     df=yf.download(tickers=all_ticker, period='1d', interval='1d')
+    
+    df= df.tail(1)
+    
     df1= (df['Close']-df['Open'])*100/df['Open']
 
 
@@ -66,7 +69,7 @@ def time2():
     
     text4 = df1[df1<-4].dropna(axis=1).transpose()
 
-    list1=["*Heavy BULLish*",text2, "*Moderate BULL*",text1, "*Bear*", text3, "*Heavy Bear*", text4]
+    list1=["*-------Market CLOSING--------*","*Heavy BULLish*",text2, "*Moderate BULL*",text1, "*Bear*", text3, "*Heavy Bear*", text4]
     
     for x in list1:    
         send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str(x)
@@ -90,7 +93,7 @@ def time3():
     
     text1=a1[a1>.9] 
     text2=a1[a1<-.9] 
-    list1=["*BULLish Opening*",text1, "*Bearish Opening*",text2]
+    list1=["*-------Market OPENING--------*","*BULLish Opening*",text1, "*Bearish Opening*",text2]
     
     for x in list1:    
         send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str(x)
@@ -100,14 +103,25 @@ def time3():
 
 schedule.clear()
 
-schedule.every().day.at("09:03").do(time1)
 schedule.every().day.at("10:02").do(time2)
 schedule.every().day.at("03:48").do(time3)
-schedule.every().day.at("05:03").do(time1)
+
+schedule.every().day.at("04:32").do(time1)
+
+schedule.every().day.at("05:02").do(time1)
+schedule.every().day.at("05:32").do(time1)
+
 schedule.every().day.at("06:03").do(time1)
+schedule.every().day.at("06:33").do(time1)
+
 schedule.every().day.at("07:03").do(time1)
+schedule.every().day.at("07:33").do(time1)
+
 schedule.every().day.at("08:03").do(time1)
-schedule.every().day.at("09:33").do(time1)
+schedule.every().day.at("08:33").do(time1)
+
+schedule.every().day.at("09:32").do(time1)
+schedule.every().day.at("09:02").do(time1)
 
 
     
