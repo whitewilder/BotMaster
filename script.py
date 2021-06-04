@@ -137,9 +137,30 @@ def time4():
         send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str(x)
         response=requests.get(send_text)
 
+        
+        
+
+def time5():
+    
+    a=yf.download(tickers="^NSEBANK", period='5m', interval='1m').dropna(axis=1)
+    b=((a['Close']- a['Open']))
+
+    if ((b[-2] < -40) | (b[-2] > 40)):
+        text= round(b[-2])
+        bot_token='1821073737:AAEvdOjwZy69f-DH7U-24Ni0ik_E5MSJHxQ'
+        bot_chatID='715631635'
+        send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str("Sudden Price change in BN: *{}*".format(text))
+        response=requests.get(send_text)
+                                        
+        
+        
+        
  #****************************************************************************************************************************************       
 
 schedule.clear()
+
+schedule.every(61).seconds.do(time5)
+
 
 schedule.every().day.at("10:02").do(time2)
 schedule.every().day.at("03:48").do(time3)
