@@ -27,7 +27,7 @@ def time1():
     rat_last=rat[-1:]
     pct_change= df['Close'].pct_change()
     pct_change=pd.DataFrame(pct_change*100)
-    final=pct_change[-1:][rat_last].dropna(axis=0)
+    final=pct_change[-1:][rat_last].dropna()
     final=final.transpose()
     final=final.reset_index()
 
@@ -56,18 +56,18 @@ def time2():
     df1= (df['Close']-df['Open'])*100/df['Open']
 
 
-    text1 = df1[df1>2][df1<4].dropna(axis=0).transpose()
+    text1 = df1[df1>2][df1<4].dropna(axis=1).transpose()
     text1.rename(columns={text1.columns[0]:'Change'}, inplace=True)
     text1=text1.sort_values(by=['Change'],ascending =False)
 
-    text2 = df1[df1>4].dropna(axis=0).transpose()
+    text2 = df1[df1>4].dropna(axis=1).transpose()
     text2.rename(columns={text2.columns[0]:'Change'}, inplace=True)
     text2=text2.sort_values(by=['Change'],ascending =False)
 
 
-    text3 = df1[df1<-2][df1>-4].dropna(axis=0).transpose()
+    text3 = df1[df1<-2][df1>-4].dropna(axis=1).transpose()
     
-    text4 = df1[df1<-4].dropna(axis=0).transpose()
+    text4 = df1[df1<-4].dropna(axis=1).transpose()
 
     list1=["*-------Market CLOSING--------*","*Heavy BULLish*",text2, "*Moderate BULL*",text1, "*Bear*", text3, "*Heavy Bear*", text4]
     
@@ -118,18 +118,18 @@ def time4():
     df1= (df['Close']-df['Open'])*100/df['Open']
 
 
-    text1 = df1[df1>2][df1<4].dropna(axis=0).transpose()
+    text1 = df1[df1>2][df1<4].dropna(axis=1).transpose()
     text1.rename(columns={text1.columns[0]:'Change'}, inplace=True)
     text1=text1.sort_values(by=['Change'],ascending =False)
 
-    text2 = df1[df1>4].dropna(axis=0).transpose()
+    text2 = df1[df1>4].dropna(axis=1).transpose()
     text2.rename(columns={text2.columns[0]:'Change'}, inplace=True)
     text2=text2.sort_values(by=['Change'],ascending =False)
 
 
-    text3 = df1[df1<-2][df1>-4].dropna(axis=0).transpose()
+    text3 = df1[df1<-2][df1>-4].dropna(axis=1).transpose()
     
-    text4 = df1[df1<-4].dropna(axis=0).transpose()
+    text4 = df1[df1<-4].dropna(axis=1).transpose()
 
     list1=["*-------sCurrent Market Status--------*","*Heavy BULLish*",text2, "*Moderate BULL*",text1, "*Bear*", text3, "*Heavy Bear*", text4]
     
