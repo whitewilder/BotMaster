@@ -167,6 +167,8 @@ schedule.every().day.at("06:45").do(time4)
 schedule.every().day.at("07:15").do(time4)
 schedule.every().day.at("07:45").do(time4)
 
+schedule.every(300).seconds.do(time4)
+
 schedule.every().day.at("08:00").do(time4)
 
 
