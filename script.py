@@ -27,7 +27,7 @@ def time1():
     rat_last=rat[-1:]
     pct_change= df['Close'].pct_change()
     pct_change=pd.DataFrame(pct_change*100)
-    final=pct_change[-1:][rat_last].dropna()
+    final=pct_change[-1:][rat_last].dropna(axis=1)
     final=final.transpose()
     final=final.reset_index()
 
