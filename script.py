@@ -145,7 +145,7 @@ def time5():
     a=yf.download(tickers="^NSEBANK", period='5m', interval='1m').dropna(axis=1)
     b=((a['Close']- a['Open']))
 
-    if ((b[-2] < -40) | (b[-2] > 40)):
+    if ((b[-2] < -15) | (b[-2] > 15)):
         text= round(b[-2])
         bot_token='1821073737:AAEvdOjwZy69f-DH7U-24Ni0ik_E5MSJHxQ'
         bot_chatID='715631635'
