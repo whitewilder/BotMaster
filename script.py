@@ -139,27 +139,43 @@ def time4():
 
         
         
+        
+def running_status():
+    start_now=datetime.now().replace(hour=3, minute=45, second=0, microsecond=0)
+    end_now=datetime.now().replace(hour=10, minute=00, second=0, microsecond=0)
+    return start_now<datetime.now()<end_now       
+        
 
 def time5():
     
     a=yf.download(tickers="^NSEBANK", period='5m', interval='1m').dropna(axis=1)
     b=((a['Close']- a['Open']))
+    
+    cond=(b[-2] < -15) | (b[-2] > 15)
+    
+    
 
-    if ((b[-2] < -15) | (b[-2] > 15)):
+    if (cond & running_status()):
         text= round(b[-2])
         bot_token='1821073737:AAEvdOjwZy69f-DH7U-24Ni0ik_E5MSJHxQ'
         bot_chatID='715631635'
         send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str("Sudden Price change in BN: *{}*".format(text))
         response=requests.get(send_text)
                                         
-        
-        
+def time55():
+    text = str(datetime.now())
+    bot_token='1821073737:AAEvdOjwZy69f-DH7U-24Ni0ik_E5MSJHxQ'
+    bot_chatID='715631635'
+    send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str("Sudden Price change in BN: *{}*".format(text))
+    response=requests.get(send_text)
         
  #****************************************************************************************************************************************       
 
 schedule.clear()
 
 schedule.every(61).seconds.do(time5)
+
+schedule.every(61).seconds.do(time55)
 
 
 schedule.every().day.at("10:02").do(time2)
