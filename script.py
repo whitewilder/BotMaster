@@ -161,7 +161,8 @@ def time5():
         bot_chatID='715631635'
         send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str("Sudden Price change in BN: *{}*".format(text))
         response=requests.get(send_text)
-                                        
+
+#dummy Function        
 def time55():
     text = str(datetime.now())
     bot_token='1821073737:AAEvdOjwZy69f-DH7U-24Ni0ik_E5MSJHxQ'
@@ -175,7 +176,7 @@ schedule.clear()
 
 schedule.every(61).seconds.do(time5)
 
-schedule.every(61).seconds.do(time55)
+#schedule.every(61).seconds.do(time55)
 
 
 schedule.every().day.at("10:02").do(time2)
