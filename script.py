@@ -151,7 +151,7 @@ def time5():
     a=yf.download(tickers="^NSEBANK", period='5m', interval='1m').dropna(axis=1)
     b=((a['Close']- a['Open']))
     
-    cond=(b[-2] < -15) | (b[-2] > 15)
+    cond=(b[-2] < -35) | (b[-2] > 35)
     
     
 
