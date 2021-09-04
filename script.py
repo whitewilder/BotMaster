@@ -273,20 +273,10 @@ schedule.clear()
 
 #schedule BN bigmoves
 
-schedule.every(61).seconds.do(time1)
+schedule.every(610).seconds.do(time1)
 
 
-# schedule closing status
-schedule.every(61).seconds.do(time5)
 
-# schedule opening status
-schedule.every(61).seconds.do(time2)
-
-#schedule Intrabreakout
-schedule.every(61).seconds.do(time3)
-
-schedule.every(61).seconds.do(time4)
-schedule.every(61).seconds.do(time6)
 
 while True:
     schedule.run_pending()
