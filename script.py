@@ -47,7 +47,7 @@ def time6():
 
 schedule.clear()
 
-schedule.every(300).seconds.do(time6)
+schedule.every(30).seconds.do(time6)
 
 while True:
     schedule.run_pending()
