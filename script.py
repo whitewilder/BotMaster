@@ -36,8 +36,8 @@ def time6():
                 "APLLTD.NS", "BAJAJFINSV.NS", "ULTRACEMCO.NS", "TATAELXSI.NS", "FDC.NS", "TATACOFFEE.NS", "BHARATRAS.NS", "SIEMENS.NS", "SANOFI.NS", "CCL.NS", "HDFC.NS", "GODREJCP.NS", "INDIAMART.NS", "ASHOKA.NS", "ALKYLAMINE.NS", "METROPOLIS.NS", "SPARC.NS", "AXISBANK.NS", "MANAPPURAM.NS", "ABCAPITAL.NS", "CONCOR.NS", "TASTYBITE.NS", "IIFLWAM.NS", "MAHINDCIE.NS", "MINDACORP.NS", "DIXON.NS", "TRENT.NS", "INDOCO.NS", "BALAMINES.NS", "ROSSARI.NS", "TIINDIA.NS", "TCNSBRANDS.NS", "HINDUNILVR.NS", "MUTHOOTFIN.NS", "SBICARD.NS", "GRSE.NS", "ACC.NS", "CHOLAFIN.NS", "BAYERCROP.NS", "SUPPETRO.NS", "AMBER.NS", "REDINGTON.NS", "CAMS.NS", "THYROCARE.NS", "INDHOTEL.NS", "ALKEM.NS", "GAEL.NS", "RITES.NS", "INTELLECT.NS", "CREDITACC.NS", "ENDURANCE.NS", "SFL.NS", "MAHLOG.NS", "CUB.NS", "BAJAJCON.NS", "TRITURBINE.NS", "MINDAIND.NS", "NAUKRI.NS", "SWSOLAR.NS", "EQUITAS.NS", "ABB.NS", "ATGL.NS", "MFSL.NS", "PHOENIXLTD.NS", "HDFCLIFE.NS", "IEX.NS", "ALEMBICLTD.NS",
         ]
 
-        df1=yf.download(tickers=ticker1, period='3mo', interval='1h')
-        df2=yf.download(tickers=ticker2, period='3mo', interval='1h')
+        df1=yf.download(tickers=ticker1, period='7d', interval='1d')
+        df2=yf.download(tickers=ticker2, period='7d', interval='1d')
         
         
         for df in [df1,df2]:
