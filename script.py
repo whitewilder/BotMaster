@@ -3,6 +3,7 @@ import pandas as pd
 import yfinance as yf
 import time
 import schedule
+import numpy as np
 from datetime import datetime
 
 
