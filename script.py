@@ -286,7 +286,7 @@ schedule.every(61).seconds.do(time2)
 schedule.every(61).seconds.do(time3)
 
 schedule.every(61).seconds.do(time4)
-schedule.every(61).seconds.do(time6)
+schedule.every(120).seconds.do(time6)
 
 while True:
     schedule.run_pending()
