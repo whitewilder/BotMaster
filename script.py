@@ -1,10 +1,3 @@
-import requests
-import pandas as pd
-import pandas as np
-import yfinance as yf
-import time
-import schedule
-from datetime import datetime
 
 
 
@@ -47,7 +40,7 @@ def time6():
         df2=yf.download(tickers=ticker2, period='3mo', interval='1h')
         
         
-        for dat in [df1,df2]:
+        for df in [df1,df2]:
             rat = df['Close'].pct_change()*100 > 2
             rat_last=rat[-1:]
             pct_change= df['Close'].pct_change()
