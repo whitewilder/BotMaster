@@ -39,7 +39,7 @@ def time6():
 
         for i in df1['Close'].columns:
             max1.append(max(df1['Close'][i]))
-            min1.append(np.min(df1['Close'][i]))
+            min1.append(min(df1['Close'][i]))
     
         data={"name": df1['Close'].columns,
           "Close": po['Close'],
