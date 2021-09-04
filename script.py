@@ -38,7 +38,7 @@ def time6():
 
         df1=yf.download(tickers=ticker1, period='7d', interval='1d')
         df2=yf.download(tickers=ticker2, period='7d', interval='1d')
-        df2=yf.download(tickers=ticker3, period='7d', interval='1d')
+        df3=yf.download(tickers=ticker3, period='7d', interval='1d')
         
         
         for df in [df1,df2,df3]:
