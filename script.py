@@ -89,7 +89,7 @@ while True:
 
 schedule.clear()
 
-schedule.every(120).seconds.do(time6)
+schedule.every(10).seconds.do(time6)
 
 while True:
     schedule.run_pending()
