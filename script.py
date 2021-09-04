@@ -72,7 +72,9 @@ def time6():
     
         list1=["*-------Breaking Volume Details--------*","*BULLish/ Breakout change*",text1, "*From high low position*",text2]
     
-        for x in list1:    
+        for x in list1:
+            bot_token='1871182021:AAH565P-1lku9NPFyemEwUFIOFj2_nVmj-A'
+            bot_chatID='1967629084'
             send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str(x)
             response=requests.get(send_text)        
         
