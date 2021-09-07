@@ -262,7 +262,7 @@ def time6():
             dff["down_from_high"]= (dff["Max"]-dff["Close"])*100/dff["Max"]
 
 
-            df1=dat
+            df1=dat.dropna()
             change=(df1['Close']-df1['Open'])*100/df1['Open']
             x=change[df1["Volume"]> 2*(df1['Volume'].rolling(150).mean())]
             y=x[(x>2)| (x<-2)]
