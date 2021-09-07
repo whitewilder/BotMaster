@@ -416,7 +416,7 @@ def time8():
             
             for i in range(1,6):
                 
-                df1=dat
+                df1=dat.dropna()
                 change=(df1['Close']-df1['Open'])*100/df1['Open']
                 x=change[df1["Volume"]> 2*(df1['Volume'].rolling(150).mean())]
                 y=x[(x>2)| (x<-2)]
