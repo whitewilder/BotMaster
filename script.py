@@ -15,8 +15,8 @@ from datetime import datetime
 
 def time1():
     now = datetime.now()
-    bot_token='1921736682:AAF50mVrAKmeNFshRUhYRVdtfDql_Nl4IHE'
-    bot_chatID='1967629084'
+    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
     if (weekno < 5):
@@ -49,8 +49,8 @@ def time1():
         
 #Market closing details        
 def time2():
-    bot_token='1936739673:AAGGoJSVg-H8vgsPkE0R6-Dh6Hw5aWDEDec'
-    bot_chatID='1967629084'
+    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_chatID='715631635'
     
     weekno = datetime.today().weekday()
     
@@ -93,9 +93,8 @@ def time2():
 #Market Opening details        
         
 def time3():
-    bot_token='1936739673:AAGGoJSVg-H8vgsPkE0R6-Dh6Hw5aWDEDec'
-    bot_chatID='1967629084'
-    
+    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
     if (weekno < 5):
@@ -144,8 +143,8 @@ def time3():
 # Current market status
 
 def time4():
-    bot_token='1986631476:AAEkVO7KwsPWlIKDaOjYm809xgU1YDFImKo'
-    bot_chatID='1967629084'
+    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_chatID='715631635'
     
     weekno = datetime.today().weekday()
     
@@ -213,8 +212,8 @@ def time5():
 def time6():
     
 
-    bot_token='1871182021:AAH565P-1lku9NPFyemEwUFIOFj2_nVmj-A'
-    bot_chatID='1967629084'
+    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
     if (weekno < 5):
@@ -297,8 +296,8 @@ def time6():
 def time7():
     
 
-    bot_token='1871182021:AAH565P-1lku9NPFyemEwUFIOFj2_nVmj-A'
-    bot_chatID='1967629084'
+    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
     if (weekno < 5):
