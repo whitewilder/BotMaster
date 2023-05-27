@@ -1,15 +1,14 @@
 # Template for hosting python scripts and applications on Heroku
 
 This is a small example of running your script with
-[Heroku](https://www.heroku.com/). You can run almost any python application
+[Railways]([https://www.heroku.com/](https://railway.app/)). You can run almost any python application
 with any dependencies.
 
 ## Getting Started
 
 1. Download or clone this repository
-2. Register on [Heroku](https://www.heroku.com/)
-3. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
-4. Download and install [git](https://git-scm.com/downloads)
+2. Register on [Railways](https://railway.app/)
+
 5. Copy your script or project to this repository's folder
 6. Replace "script.py" with the path to your main executable file in `Procfile`
 
@@ -80,10 +79,6 @@ with any dependencies.
     heroku ps:scale worker=0
     ```
 
-### Prerequisites
-
-* [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
-* [git](https://git-scm.com/downloads)
 
 ## Authors
 
