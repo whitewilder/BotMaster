@@ -356,8 +356,8 @@ def time7():
             list1=["*-------Breaking Volume List--------*","*BULLish/ Breakout change*",text_f]
         
             for x in list1:
-                bot_token='1871182021:AAH565P-1lku9NPFyemEwUFIOFj2_nVmj-A'
-                bot_chatID='1967629084'
+                bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+                bot_chatID='715631635'
                 send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str(x)
                 response=requests.get(send_text)        
                   
