@@ -195,12 +195,12 @@ def time5():
     a=yf.download(tickers="^NSEBANK", period='5m', interval='1m').dropna(axis=1)
     b=((a['Close']- a['Open']))
     
-    cond=(b[-2] < -35) | (b[-2] > 35)
+    cond=(b[-2] < -15) | (b[-2] > 15)
 
     if (cond & running_status()):
         text= round(b[-2])
-        bot_token='1945412976:AAG7nq85OUhy5ji6l-nH4TwjuPB7WsjOoEM'
-        bot_chatID='1967629084'
+        bot_token='6015444865:AAFZ6vCJA1e6bVDpNOFB8d7L-6xPN956Wow'
+        bot_chatID='715631635'
         send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str("Sudden Price change in BN: *{}*".format(text))
         response=requests.get(send_text)
 
