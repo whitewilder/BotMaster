@@ -1,1 +1,1 @@
-web: yarn start:production
+web: python3 script.py
