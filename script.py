@@ -525,6 +525,4 @@ schedule.every().day.at("10:03").do(time7)
 
 while True:
     schedule.run_pending()
-    time1()
-    print('Hello')
-    time.sleep(15)
+    time.sleep(1)
