@@ -522,7 +522,11 @@ schedule.every().day.at("10:03").do(time7)
 
 # time8 Not working not necessary
 # schedule.every().day.at("10:06").do(time8)
-
+def do_nothing():
+    pass
+    
 while True:
     schedule.run_pending()
-    time.sleep(10)
+    do_nothing()
+    time6()
+    time.sleep(15)
