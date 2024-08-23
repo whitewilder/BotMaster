@@ -6,6 +6,11 @@ import time
 import schedule
 import numpy as np
 from datetime import datetime
+import os
+import time
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
 
 
 #Intraday 30m breakout
@@ -457,76 +462,75 @@ def time8():
 #****************************************************************************************************************************************       
                 
                 
-schedule.clear()
-
-#schedule BN bigmoves
-
-schedule.every(61).seconds.do(time5)
 
 
-# schedule closing status
-schedule.every().day.at("10:02").do(time2)
 
-# schedule opening status
-schedule.every().day.at("03:48").do(time3)
+# Schedule your tasks
+def setup_schedules():
+    schedule.clear()
 
-#schedule Intrabreakout
-schedule.every().day.at("04:32").do(time1)
+    # Example of scheduling
+    schedule.every(61).seconds.do(time1)
 
-schedule.every().day.at("05:02").do(time1)
-schedule.every().day.at("05:32").do(time1)
+    schedule.every().day.at("10:02").do(time2)
+    schedule.every().day.at("03:48").do(time3)
 
-schedule.every().day.at("06:03").do(time1)
-schedule.every().day.at("06:33").do(time1)
+    schedule.every().day.at("04:32").do(time1)
+    schedule.every().day.at("05:02").do(time1)
+    schedule.every().day.at("05:32").do(time1)
+    schedule.every().day.at("06:03").do(time1)
+    schedule.every().day.at("06:33").do(time1)
+    schedule.every().day.at("07:03").do(time1)
+    schedule.every().day.at("07:33").do(time1)
+    schedule.every().day.at("08:03").do(time1)
+    schedule.every().day.at("08:33").do(time1)
+    schedule.every().day.at("09:32").do(time1)
+    schedule.every().day.at("09:02").do(time1)
 
-schedule.every().day.at("07:03").do(time1)
-schedule.every().day.at("07:33").do(time1)
+    schedule.every().day.at("06:15").do(time4)
+    schedule.every().day.at("06:45").do(time4)
+    schedule.every().day.at("07:15").do(time4)
+    schedule.every().day.at("07:45").do(time4)
+    schedule.every().day.at("08:00").do(time4)
+    schedule.every().day.at("08:15").do(time4)
+    schedule.every().day.at("08:45").do(time4)
+    schedule.every().day.at("09:30").do(time4)
+    schedule.every().day.at("09:45").do(time4)
 
-schedule.every().day.at("08:03").do(time1)
-schedule.every().day.at("08:33").do(time1)
+    schedule.every().day.at("04:47").do(time6)
+    schedule.every().day.at("05:47").do(time6)
+    schedule.every().day.at("06:47").do(time6)
+    schedule.every().day.at("07:47").do(time6)
+    schedule.every().day.at("08:47").do(time6)
+    schedule.every().day.at("09:47").do(time6)
+    schedule.every().day.at("10:03").do(time7)
 
-schedule.every().day.at("09:32").do(time1)
-schedule.every().day.at("09:02").do(time1)
+# Function to run scheduled tasks
+def run_scheduler():
+    while True:
+        schedule.run_pending()
+        time.sleep(5)  # Reduce CPU usage by sleeping for a second between checks
 
+# Create a simple HTTP server to handle health checks
+class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'OK')
 
-#schedule current market status
+def run_server():
+    port = int(os.environ.get('PORT', 8000))  # Heroku provides the port via environment variable
+    server = HTTPServer(('0.0.0.0', port), SimpleHTTPRequestHandler)
+    print(f'Server started on port {port}')
+    server.serve_forever()
 
-schedule.every().day.at("06:15").do(time4)
-schedule.every().day.at("06:45").do(time4)
+# Setup schedules
+setup_schedules()
 
-schedule.every().day.at("07:15").do(time4)
-schedule.every().day.at("07:45").do(time4)
+# Start the HTTP server in a separate thread
+server_thread = threading.Thread(target=run_server)
+server_thread.daemon = True  # Ensures the thread exits when the main program exits
+server_thread.start()
 
-
-schedule.every().day.at("08:00").do(time4)
-
-
-schedule.every().day.at("08:15").do(time4)
-schedule.every().day.at("08:45").do(time4)
-
-schedule.every().day.at("09:30").do(time4)
-schedule.every().day.at("09:45").do(time4)
-
-#-----------------------------------------------------    
-
-schedule.every().day.at("04:47").do(time6)
-schedule.every().day.at("05:47").do(time6)
-
-schedule.every().day.at("06:47").do(time6)
-schedule.every().day.at("07:47").do(time6)
-
-schedule.every().day.at("08:47").do(time6)
-schedule.every().day.at("09:47").do(time6)
-
-schedule.every().day.at("10:03").do(time7)
-
-# time8 Not working not necessary
-# schedule.every().day.at("10:06").do(time8)
-def do_nothing():
-    print('my name is shubham')
-    
-while True:
-    schedule.run_pending()
-    do_nothing()
-    time5()
-    time.sleep(15)
+# Run the scheduler
+run_scheduler()
