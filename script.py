@@ -470,7 +470,7 @@ def setup_schedules():
     schedule.clear()
 
     # Example of scheduling
-    schedule.every(61).seconds.do(time1)
+    schedule.every(61).seconds.do(time5)
 
     schedule.every().day.at("10:02").do(time2)
     schedule.every().day.at("03:48").do(time3)
