@@ -387,8 +387,8 @@ def time8():
                 "APLLTD.NS", "BAJAJFINSV.NS", "ULTRACEMCO.NS", "TATAELXSI.NS", "FDC.NS", "TATACOFFEE.NS", "BHARATRAS.NS", "SIEMENS.NS", "SANOFI.NS", "CCL.NS", "HDFC.NS", "GODREJCP.NS", "INDIAMART.NS", "ASHOKA.NS", "ALKYLAMINE.NS", "METROPOLIS.NS", "SPARC.NS", "AXISBANK.NS", "MANAPPURAM.NS", "ABCAPITAL.NS", "CONCOR.NS", "TASTYBITE.NS",  "MAHINDCIE.NS", "MINDACORP.NS", "DIXON.NS", "TRENT.NS", "INDOCO.NS", "BALAMINES.NS", "ROSSARI.NS", "TIINDIA.NS", "TCNSBRANDS.NS", "HINDUNILVR.NS", "MUTHOOTFIN.NS", "SBICARD.NS", "GRSE.NS", "ACC.NS", "CHOLAFIN.NS", "BAYERCROP.NS","AMBER.NS", "REDINGTON.NS", "CAMS.NS", "THYROCARE.NS", "INDHOTEL.NS", "ALKEM.NS", "GAEL.NS", "RITES.NS", "INTELLECT.NS", "CREDITACC.NS", "ENDURANCE.NS", "SFL.NS", "MAHLOG.NS", "CUB.NS", "BAJAJCON.NS", "TRITURBINE.NS", "NAUKRI.NS", "SWSOLAR.NS",  "ABB.NS", "ATGL.NS", "MFSL.NS", "PHOENIXLTD.NS", "HDFCLIFE.NS", "IEX.NS", "ALEMBICLTD.NS",
         ]
 
-        df1=yf.download(tickers=ticker1, period='3mo', interval='1h')
-        df2=yf.download(tickers=ticker2, period='3mo', interval='1h')
+        df1=yf.download(tickers=ticker1, period='1y', interval='1d')
+        df2=yf.download(tickers=ticker2, period='1y', interval='1d')
         
         
         for dat in [df1,df2]:
@@ -398,7 +398,8 @@ def time8():
             x=change[df1["Volume"]> 2*(df1['Volume'].rolling(150).mean())]
             y=x[(x>2)| (x<-2)]
 
-            po=df1['Close'].dropna(axis=1).tail(1).transpose()
+            # po=df1['Close'].dropna(axis=1).tail(1).transpose()
+            po=df1['Close'].tail(1).transpose()
             po.rename(columns={po.columns[0]:'Close'}, inplace=True)
 
 
@@ -504,6 +505,7 @@ def setup_schedules():
     schedule.every().day.at("08:47").do(time6)
     schedule.every().day.at("09:47").do(time6)
     schedule.every().day.at("10:03").do(time7)
+    schedule.every().day.at("10:05").do(time8)
 
 # Function to run scheduled tasks
 def run_scheduler():
