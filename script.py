@@ -18,7 +18,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 def time1():
     now = datetime.now()
-    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
     bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
@@ -51,7 +51,7 @@ def time1():
         
 #Market closing details        
 def time2():
-    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
     bot_chatID='715631635'
     
     weekno = datetime.today().weekday()
@@ -94,7 +94,7 @@ def time2():
 #Market Opening details        
         
 def time3():
-    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
     bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
@@ -143,7 +143,7 @@ def time3():
 # Current market status
 
 def time4():
-    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
     bot_chatID='715631635'
     
     weekno = datetime.today().weekday()
@@ -215,7 +215,7 @@ def time5():
 def time6():
     
 
-    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
     bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
@@ -296,7 +296,7 @@ def time6():
 def time7():
     
 
-    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
     bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
@@ -357,7 +357,7 @@ def time7():
             list1=["*-------Breaking Volume List--------*","*BULLish/ Breakout change*",text_f]
         
             for x in list1:
-                bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+                bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
                 bot_chatID='715631635'
                 send_text='https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + str(x)
                 response=requests.get(send_text)  
@@ -368,7 +368,7 @@ def time7():
 def time8():
     
 
-    bot_token='5912968938:AAGiqriA5OnLJ9T4dOVPm0PdGBYLDdkvnHo'
+    bot_token='8534956411:AAGxrH0pZQOvcKTmwga9jO3fiF6K5PzROdQ'
     bot_chatID='715631635'
     weekno = datetime.today().weekday()
     
